@@ -22,7 +22,14 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 var utils = __toESM(require("@iobroker/adapter-core"));
-var import_puppeteer = __toESM(require("puppeteer"));
+var import_puppeteer = __toESM(require("puppeteer-extra"));
+
+
+var StealthPlugin = require('puppeteer-extra-plugin-stealth');
+
+// add the stealth plugin
+import_puppeteer.use(StealthPlugin());
+
 var import_tools = require("./lib/tools");
 var import_path = require("path");
 class PuppeteerAdapter extends utils.Adapter {
